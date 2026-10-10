@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NatureQuest — Touch Grass</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span>✦</span> Nature<span class="green">Quest</span></a>
+  <div class="top-note">less screen · more scene ↗</div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div>
+      <div class="eyebrow"><i></i> OFFLINE AI ADVENTURE LOG</div>
+      <h1>Touch grass.<br><span>Make a little story.</span></h1>
+      <p>Tell us how much time and energy you have. Your local AI will turn it into a tiny outdoor quest.</p>
+      <div class="underline"></div>
+    </div>
+    <aside class="note yellow">
+      <b>“</b><p>The best adventures<br>don't need Wi-Fi.</p><small>— today's reminder</small>
+    </aside>
+  </section>
+
+  <section class="layout">
+    <div>
+      <div class="heading"><span>01</span><div><small>YOUR NEXT MISSION</small><h2>What are you up for?</h2></div></div>
+      <section class="card builder">
+        <div class="pin"></div>
+        <div class="field"><label>TIME AVAILABLE ✎</label><div class="choices" id="durationOptions">
+          <button class="choice active" data-value="15">15 min</button><button class="choice" data-value="30">30 min</button><button class="choice" data-value="45">45 min</button><button class="choice" data-value="60">1 hour</button>
+        </div></div>
+        <div class="field"><label>ENERGY TODAY ✿</label><div class="energy" id="energyOptions">
+          <button class="energy-btn" data-value="low"><strong>☁</strong><b>Low</b><small>slow & easy</small></button>
+          <button class="energy-btn active" data-value="medium"><strong>☀</strong><b>Okay</b><small>ready to wander</small></button>
+          <button class="energy-btn" data-value="high"><strong>✦</strong><b>High</b><small>let's explore</small></button>
+        </div></div>
+        <div class="field"><label>DIFFICULTY ★</label><div class="difficulty"><input id="difficulty" type="range" min="1" max="5" value="2"><span id="difficultyStars">★★☆☆☆</span><small id="difficultyValue">2 / 5</small></div></div>
+        <button type="button" class="generate" id="generateBtn"><span>✦</span> Generate my quest <b>→</b></button>
+        <p class="offline">● Gemma runs locally on your machine · no cloud needed</p>
+      </section>
+
+      <section class="card result hidden" id="questResult">
+        <div class="result-top"><small>QUEST GENERATED</small><em id="questXp">+30 XP</em></div>
+        <div class="quest"><span>🌿</span><div><h2 id="questTitle">Your little adventure</h2><p id="questDescription"></p></div></div>
+        <div class="meta"><span>◷ <b id="questDuration">15</b> min</span><span>★ <b id="questDifficulty">2</b>/5</span><span>◎ offline</span></div>
+        <div class="actions"><button type="button" class="secondary" id="newQuestBtn">↻ New quest</button><button type="button" class="complete" id="completeBtn">I did it! ✓</button></div>
+      </section>
+
+      <section class="reflection hidden" id="reflectionCard">
+        <div class="tape"></div>
+        <div class="heading"><span>02</span><div><small>FIELD NOTES</small><h2>How did it feel?</h2></div></div>
+        <textarea id="reflection" placeholder="Write a few honest lines... What did you notice?"></textarea>
+        <button type="button" class="reflect" id="reflectBtn">Save reflection ↗</button>
+        <div class="feedback hidden" id="feedback"></div>
+      </section>
+    </div>
+
+    <aside>
+      <section class="stats">
+        <div class="stats-head">MY LITTLE LOGBOOK <span>✎</span></div>
+        <div class="level"><div class="level-badge" id="levelBadge">1</div><div><small>CURRENT LEVEL</small><h3>Curious Wanderer</h3></div></div>
+        <div class="xp-track"><span id="xpBar"></span></div><div class="xp-label"><span id="xpText">0 / 100 XP</span><span id="totalXp">0 total</span></div>
+        <div class="stats-split"><div>🔥 <strong id="streak">0</strong><small>day streak</small></div><div>🌱 <strong id="completed">0</strong><small>quests done</small></div></div>
+      </section>
+
+      <section class="card badges"><div class="card-head"><h3>tiny wins</h3><span>✦</span></div><div class="badge-grid">
+        <div><span class="badge locked" id="badge1">🌱</span><small>First Step</small></div><div><span class="badge locked" id="badge2">🌿</span><small>Explorer</small></div><div><span class="badge locked" id="badge3">☀</span><small>Sun Seeker</small></div><div><span class="badge locked" id="badge4">🔥</span><small>On a Roll</small></div>
+      </div></section>
+
+      <section class="offline-card"><span>⌁</span><h3>NO SIGNAL.<br>NO PROBLEM.</h3><p>Your quests, reflections and progress stay on this device.</p><div class="stamp">100%<small>LOCAL</small></div></section>
+    </aside>
+  </section>
+
+  <section class="history"><div class="heading"><span>03</span><div><small>TRAIL JOURNAL</small><h2>Recent adventures</h2></div></div><div class="card" id="historyList"><div class="empty">No adventures yet. Your first little story is waiting. 🌼</div></div></section>
+</main>
+<footer><span>Made to get you away from your screen.</span><span>✦ powered by local Gemma</span></footer>
+<script src="js/app.js"></script>
+</body>
+</html>
